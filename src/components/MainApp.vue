@@ -62,16 +62,6 @@ export default {
 
 <style lang="scss" scoped>
 
-//GENERALI
-@mixin container-base{
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-$flex: flex;
-
-$primary-blue: #0282f9;
-
     // MAIN
     main{
         background-color: black;
@@ -91,7 +81,6 @@ $primary-blue: #0282f9;
 
             ul{
                 @include container-base;
-                display: $flex;
 
                 li{
                     padding: 0 20px;
@@ -99,7 +88,7 @@ $primary-blue: #0282f9;
                     a{
                         height: 100%;
                         color: white;
-                        display: $flex;
+                        display: flex;
                         align-items: center;
                         font-size: 0.8rem;
                         img{

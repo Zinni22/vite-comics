@@ -133,34 +133,63 @@ export default {
 
         </section>
 
+        <!-- SEZIONE SUBSCRIBE -->
+        <section id="subscribe-section">
+
+            <div>
+
+                <button>
+                    SIGN-UP NOW!
+                </button>
+
+                <ul>
+                    <li><a href="#">FOLLOW US</a></li>
+
+                    <li><a href="#">
+                        <img src="../img/footer-facebook.png" alt="facebook-footer">
+                    </a></li>
+
+                    <li><a href="#">
+                        <img src="../img/footer-twitter.png" alt="twitter-footer">
+                    </a></li>
+
+                    <li><a href="#">
+                        <img src="../img/footer-youtube.png" alt="youtube-footer">
+                    </a></li>
+
+                    <li><a href="#">
+                        <img src="../img/footer-pinterest.png" alt="pinterest-footer">
+                    </a></li>
+
+                    <li><a href="#">
+                        <img src="../img/footer-periscope.png" alt="periscope-footer">
+                    </a></li>
+                    
+                </ul>
+
+            </div>
+
+        </section>
+
     </footer>
  
 </template>
 
 <style lang="scss" scoped>
-// GENRALI
-@mixin container-base{
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-$flex: flex;
-
-$primary-blue: #0282f9;
 
     // FOOTER
     footer{
 
         #main-section{
             background-image: url(../img/footer-bg.jpg);
-            padding: 50px 0;
+            background-size: contain;
 
             div{
                 @include container-base;
-                display: $flex;
 
                 ul{
                     margin-right: 40px;
+                    margin-top: 50px;
 
                     h4{
                         color: white;
@@ -176,9 +205,44 @@ $primary-blue: #0282f9;
                 }
 
                 img{
+                    width: 50%;
                 }
+
             }
 
+        }
+
+        #subscribe-section{
+            background-color: #303030;
+            padding: 30px 0;
+
+            div{
+                @include container-base;
+                justify-content: space-between;
+
+                button{
+                    padding: 10px;
+                    border: 1px solid $primary-blue;
+                    background: none;
+                    color: white;
+                    cursor: pointer;
+                }
+
+                ul{
+                    display: flex;
+                    align-items: center;
+
+                    li{
+                        padding: 10px;
+
+                        a{
+                            color: $primary-blue;
+                            font-weight: bold;
+
+                        }
+                    }
+                }
+            }
         }
 
     }

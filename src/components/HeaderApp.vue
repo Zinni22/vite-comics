@@ -6,6 +6,60 @@ export default {
     data () {
         return{
 
+            links: [
+                {
+                    name: 'CHARACTERS',
+                    url:'#',
+                    active: false,
+                },
+                {
+                    name: 'COMICS',
+                    url:'#',
+                    active: true,
+                },
+                {
+                    name: 'MOVIES',
+                    url:'#',
+                    active: false,
+                },
+                {
+                    name: 'TV',
+                    url:'#',
+                    active: false,
+                },
+                {
+                    name: 'GAMES',
+                    url:'#',
+                    active: false,
+                },
+                {
+                    name: 'COLLECTIBLES',
+                    url:'#',
+                    active: false,
+                },
+                {
+                    name: 'VIDEOS',
+                    url:'#',
+                    active: false,
+                },
+                {
+                    name: 'FANS',
+                    url:'#',
+                    active: false,
+                },
+                {
+                    name: 'NEWS',
+                    url:'#',
+                    active: false,
+                },
+                {
+                    name: 'SHOP',
+                    url:'#',
+                    active: false,
+                },
+
+            ]
+
         }
     }
 
@@ -21,52 +75,14 @@ export default {
             <img src="../img/dc-logo.png" alt="blue-logo">
 
             <ul>
-                <li><a href="#">
-                    CHARACTERS
-                </a></li>
-
-                <li class="active"><a href="#">
-                    COMICS
-                </a></li>
-
-                <li><a href="#">
-                    MOVIES
-                </a>
-                </li>
-
-                <li><a href="#">
-                    TV
-                </a>
-                </li>
-
-                <li><a href="#">
-                    GAMES
-                </a>
-                </li>
-
-                <li><a href="#">
-                    COLLECTIBLES
-                </a>
-                </li>
-
-                <li><a href="#">
-                    VIDEOS
-                </a>
-                </li>
-
-                <li><a href="#">
-                    FANS
-                </a>
-                </li>
-
-                <li><a href="#">
-                    NEWS
-                </a>
-                </li>
-
-                <li><a href="#">
-                    SHOP
-                </a>
+                <li v-for="link in links"
+                :class="{
+                    active: link.active == true
+                }"
+                >
+                    <a :href="link.url">
+                    {{ link.name }}
+                    </a>
                 </li>
             </ul>
 
@@ -78,15 +94,6 @@ export default {
 
 <style lang="scss">
 
-// GENERALI
-@mixin container-base{
-    max-width: 1000px;
-    margin: 0 auto;
-}
-$flex: flex;
-
-$primary-blue: #0282f9;
-
     // HEADER
     header{
         background-color: white;
@@ -95,7 +102,6 @@ $primary-blue: #0282f9;
             height: 60px;
             @include container-base;
 
-            display: $flex;
             justify-content: space-between;
             align-items: center;
 
@@ -105,14 +111,14 @@ $primary-blue: #0282f9;
 
             ul{
                 height: 100%;
-                display: $flex;
+                display: flex;
 
                 li {
                     font-size: 0.8rem;
                     font-weight: bold;
                     padding: 0 15px;
 
-                    display: $flex;
+                    display: flex;
                     align-items: center;
 
                     a{
@@ -127,7 +133,6 @@ $primary-blue: #0282f9;
                         }
                     }
 
-                
                 }
                 li:hover{
                     background-color: lightgray;
