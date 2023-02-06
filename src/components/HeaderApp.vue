@@ -97,6 +97,9 @@ export default {
     // HEADER
     header{
         background-color: white;
+        position: fixed;
+        width: 100%;
+        z-index: 2;
 
         div{
             height: 60px;
